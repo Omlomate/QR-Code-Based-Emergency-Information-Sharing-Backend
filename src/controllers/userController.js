@@ -262,7 +262,7 @@ const generateQRCode = async (req, res) => {
       }
   
       // Point to frontend route (adjust port if your frontend runs on a different one)
-      const publicUrl = `http://localhost:3000/public/${user._id}`;
+      const publicUrl = `https://qr-code-based-emergency-information-sharing.vercel.app/public/${user._id}`;
       const qrCodeData = await QRCode.toDataURL(publicUrl); // Generate QR code as base64 image
       user.qrCode = qrCodeData; // Store base64 image in qrCode field
       await user.save();
